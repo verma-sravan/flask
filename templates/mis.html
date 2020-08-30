@@ -1,0 +1,49 @@
+<html>
+<header>
+
+<style type="text/css">
+body {background-color: powderblue;}
+h1   {color: blue;}
+p    {color: red;}
+
+	.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+#formbox {
+            width:210px;
+            margin:auto 0;
+            text-align: center;
+        }
+
+
+</style>
+
+ <img src="{{ url_for('static', filename='wrldc_img.png') }}" alt="WRLDC" class="center" > 
+
+	</header>
+   <body>
+      <form action = "http://localhost:5000/action_performed" method = "POST" class="center">
+         
+         
+         <p> <label for="action">Choose Action:</label>
+
+		<select name="action" id="action">
+			<option value="freq_raw_data_creation">Freq raw data creation</option>
+			<option value="vol_raw_data_creation">Vol raw data creation</option>
+			<option value="freq_derived_data_creation">Freq derived data creation</option>
+			<option value="Vol_derived_data_creation">Vol derived data creation</option>
+	  		<option value="weekly">Generate weekly Report</option>
+  			<option value="monthly">Monthly</option>
+  			<option value="quarterly">Quarterly</option>
+  			<option value="annual">Annual</option>
+		</select> </p>
+		<p>Start Date <input type="date" value="2020-06-01" name = "startdate" /></p>
+		<p>End Date <input type="date" value="2020-06-07" name = "enddate" /></p>
+         <div id="formbox"><p><input type = "submit" value = "submit" /></p></div>
+      </form>
+   </body>
+</html>
